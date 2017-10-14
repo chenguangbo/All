@@ -26,7 +26,7 @@
 			onComplete : function(data, self, element) {
 				alert(data);
 			},//提交表单完成后触发的事件
-			onSelect : function() { 
+			onSelect : function() {
 				alert(1);
 			}//当用户选择了一个文件后触发事件
 		});
