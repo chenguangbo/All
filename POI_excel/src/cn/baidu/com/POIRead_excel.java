@@ -10,6 +10,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class POIRead_excel {
 	
+	private static XSSFWorkbook workbook;
+
 	/**
 	 *注意：
 	 * // 1 判断文件后缀名是xls，还是xlsx
@@ -18,8 +20,7 @@ public class POIRead_excel {
 	public static void testPOI(){
 		
 		try {
-			//读取整个Excel文档
-			XSSFWorkbook workbook = new XSSFWorkbook(new FileInputStream(new File("C:\\Users\\CGB\\Desktop\\Nginx和apache所在机器IP和启动命令.xlsx")));
+			workbook = new XSSFWorkbook(new FileInputStream(new File("C:\\Users\\CGB\\Desktop\\Nginx和apache所在机器IP和启动命令.xlsx")));
 			//读取第几个sheet页    索引从0开始
 			XSSFSheet sheet = workbook.getSheetAt(0);  
 			// 循环遍历整个sheet取出每一行 
