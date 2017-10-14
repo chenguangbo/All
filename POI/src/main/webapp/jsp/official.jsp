@@ -15,20 +15,13 @@
 	<script>
 	$(function(){
 		$("#uploadButton").upload({
-			name : 'uploadButton',//后台接收的属性名 上传组件的name属性，即<input type='file' name='file'/>
-			action : '/OCUpload/ocup',//向服务器请求的路径
+			name : 'fileUpload',//后台接收的属性名 上传组件的name属性，即<input type='file' name='file'/>
+			action : '${pageContext.request.contextPath }/UploadServlet',//向服务器请求的路径
 			enctype : 'multipart/form-data',//mime类型，默认即可
-			params : {'abc':'abc'},//请求时额外传递的参数，默认为空
-			autoSubmit : true,//是否自动提交，即当选择了文件，自动关闭了选择窗口后，是否自动提交请求。
-			onSubmit : function() {
-				alert(123);
-			},//提交表单之前触发事件
 			onComplete : function(data, self, element) {
 				alert(data);
 			},//提交表单完成后触发的事件
-			onSelect : function() {
-				alert(1);
-			}//当用户选择了一个文件后触发事件
+			
 		});
 	});
 	</script>
