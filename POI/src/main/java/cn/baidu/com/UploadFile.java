@@ -40,24 +40,27 @@ public class UploadFile extends HttpServlet {
 			List<FileItem> list = fileUpload.parseRequest(req);
 			for (FileItem item : list) {
 				String path = null;
+				String uuidFileName = null;
 				if (item.isFormField()) {// 是表单键值对类型
 					// 普通字段
-					// System.out.println(item.getName());
+					// System.out.println(uuidFileName);
 					// System.out.println(item.getString("UTF-8"));
 					// System.out.println(item.getFieldName());
 					map.put(item.getFieldName(), item.getString("UTF-8"));
 				} else {
 					// 文件字段
-					// System.out.println(item.getName()); //文件名
+					// System.out.println(uuidFileName); //文件名
 					// System.out.println(item.getString("UTF-8"));//文件内容
 					// System.out.println(item.getFieldName());//前段传输过程中的的name字段
 					// 找到项目根路径下的img文件夹的位置
+					uuidFileName = UploadUtils.getUUIDName(item.getName());
 					path = getServletContext().getRealPath("/img");
 					// 拼装存储文件的文件夹路径
-					path = path + UploadUtils.getDir(item.getName()).replace("/", "\\")+"\\";
-					System.out.println(path+item.getName());
+					path = path + UploadUtils.getDir(uuidFileName).replace("/", "\\")+"\\";
+					System.out.println(path+uuidFileName);
 					// 创建这个
-					File file = new File(path+item.getName());
+					
+					File file = new File(path+uuidFileName);
 					File dir = new File(path);
 					if(!dir.exists())
 						FileUtils.createDir(path);
@@ -69,7 +72,7 @@ public class UploadFile extends HttpServlet {
 					IOUtils.closeQuietly(in);
 					IOUtils.closeQuietly(out);
 				}
-				user.setPart(path + item.getName());
+				user.setPart(path + uuidFileName);
 			}
 			BeanUtils.populate(user, map);
 			System.out.println(user.toString());
