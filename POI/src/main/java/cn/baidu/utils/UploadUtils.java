@@ -38,11 +38,11 @@ public class UploadUtils {
 	 */
 	public static String getDir(String name){
 		int i = name.hashCode();
-		String hex = Integer.toHexString(i);
+		String hex = Integer.toHexString(i);//转换成16进制
 		int j=hex.length();
 		for(int k=0;k<8-j;k++){
-			hex="0"+hex;
-		}
+			hex="0"+hex; 
+		}                                    //取出前8个加横线拼装
 		return "/"+hex.charAt(0)+"/"+hex.charAt(1)+"/"+hex.charAt(2)+"/"+hex.charAt(3)+"/"+hex.charAt(4)+"/"+hex.charAt(5)+"/"+hex.charAt(6)+"/"+hex.charAt(7);
 	}
 	

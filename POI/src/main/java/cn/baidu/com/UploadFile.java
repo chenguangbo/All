@@ -28,7 +28,6 @@ public class UploadFile extends HttpServlet {
 
 	@SuppressWarnings("all")
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println(123);
 		req.setCharacterEncoding("utf-8");
 		resp.setCharacterEncoding("utf-8");
 		resp.setContentType("text/html;charset=utf-8");
@@ -63,7 +62,8 @@ public class UploadFile extends HttpServlet {
 					File file = new File(path+uuidFileName);
 					File dir = new File(path);
 					if(!dir.exists())
-						FileUtils.createDir(path);
+//						FileUtils.createDir(path);
+						dir.mkdirs();
 					if (!file.exists())// 如果文件夹不存在
 						file.createNewFile();// 创建文件夹
 					OutputStream out = new FileOutputStream(file);
@@ -79,7 +79,8 @@ public class UploadFile extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		req.getRequestDispatcher("/callBack.jsp").forward(req, resp);
+		resp.sendRedirect(req.getContextPath()+"/jsp/callBack.jsp");
+//		req.getRequestDispatcher("/callBack.jsp").forward(req, resp);
 	}
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
