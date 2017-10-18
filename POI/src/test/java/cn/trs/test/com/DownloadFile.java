@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.IOUtils;
 
+import cn.baidu.utils.UploadUtils;
+
 public class DownloadFile extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -20,13 +22,13 @@ public class DownloadFile extends HttpServlet {
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String fileName = "C:\\Users\\CGB\\Desktop\\大话数据结构.pdf";
+		//设置浏览器打开数据的方式
+		resp.setHeader("Content-Disposition", "attachment;filename="+fileName);  
+		//设置文件MIME类型  
+		resp.setContentType(getServletContext().getMimeType(fileName)); 
 		//文件下载需要   一个流   两个头
 		ServletOutputStream out = resp.getOutputStream();
 	
-		//设置文件MIME类型  
-        resp.setContentType(getServletContext().getMimeType(fileName)); 
-        //设置浏览器打开数据的方式
-        resp.setHeader("Content-Disposition", "attachment;filename="+fileName);  
         
         FileInputStream in = new FileInputStream(fileName);
         IOUtils.copy(in, out);

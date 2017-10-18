@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.IOUtils;
 
+import cn.baidu.utils.FileDownloadUtils;
+
 public class DownloadFile extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -22,12 +24,12 @@ public class DownloadFile extends HttpServlet {
 		String fileName = "C:\\Users\\CGB\\Desktop\\大话数据结构.pdf";
 		//文件下载需要   一个流   两个头
 		ServletOutputStream out = resp.getOutputStream();
-	
+		
 		//设置文件MIME类型  
         resp.setContentType(getServletContext().getMimeType(fileName)); 
         //设置浏览器打开数据的方式
         resp.setHeader("Content-Disposition", "attachment;filename="+fileName);  
-        
+        FileDownloadUtils.encodeDownloadFilename(fileName, req.getHeader("User-Agent"));
         FileInputStream in = new FileInputStream(fileName);
         IOUtils.copy(in, out);
 	

@@ -8,6 +8,9 @@
 </head>
 <body>
 <h1>你好</h1>
+<form action="${pageContext.request.contextPath }/DownloadFile" method="post">
+	<input type="submit" >
+</form>
 <a href="${pageContext.request.contextPath }/DownloadFile" >下载文件</a>
 </body>
 </html>
