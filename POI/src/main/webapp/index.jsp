@@ -8,5 +8,6 @@
 </head>
 <body>
 <h1>你好</h1>
+<a href="${pageContext.request.contextPath }/DownloadFile" >下载文件</a>
 </body>
 </html>

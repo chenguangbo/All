@@ -18,4 +18,15 @@
     <servlet-name>UploadServlet</servlet-name>
     <url-pattern>/UploadServlet</url-pattern>
   </servlet-mapping>
+   <servlet>
+    <servlet-name>DownloadFile</servlet-name>
+    <servlet-class>cn.trs.test.com.DownloadFile</servlet-class>
+  </servlet>
+   
+  <servlet-mapping>
+    <servlet-name>DownloadFile</servlet-name>
+    <url-pattern>/DownloadFile</url-pattern>
+  </servlet-mapping>
+  
+
 </web-app>
