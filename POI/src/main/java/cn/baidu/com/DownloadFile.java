@@ -17,8 +17,6 @@ public class DownloadFile extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	
-	
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String fileName = "大话数据结构.pdf";

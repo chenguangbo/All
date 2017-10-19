@@ -11,6 +11,15 @@
 <form action="${pageContext.request.contextPath }/DownloadFile" method="post">
 	<input type="submit" >
 </form>
+
+
+<form action="${pageContext.request.contextPath }/writeFile" method="post">
+	<input type="submit" value="下载" >
+</form>
+
+
+
+
 <a href="${pageContext.request.contextPath }/DownloadFile" >下载文件</a>
 </body>
 </html>
