@@ -97,7 +97,7 @@ public class POIWrite extends HttpServlet {
 		CreationHelper createHelper = wb.getCreationHelper();
 		// 设置链接
 		HSSFHyperlink hyperLink = (HSSFHyperlink) createHelper.createHyperlink(Hyperlink.LINK_URL);
-		hyperLink.setAddress("http://www.yiibai.com");
+		hyperLink.setAddress("https://www.hao123.com/");
 		// 给这一行附上链接
 		cell.setHyperlink(hyperLink);
 		// 给这一行附上样式
