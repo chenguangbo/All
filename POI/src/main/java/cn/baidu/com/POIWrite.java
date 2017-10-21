@@ -38,7 +38,13 @@ public class POIWrite extends HttpServlet {
 		HSSFSheet sheet = wb.createSheet("POI导出");
 		// 创建第几行
 		Row row = sheet.createRow(0);
+		//创建第二行
 		Row row2 = sheet.createRow(1);
+
+		
+		//设置每一列宽度     都是256的倍数                             第一个参数是第几列             第二个参数是宽度   
+		sheet.setColumnWidth(0,25 * 256);  
+		sheet.setColumnWidth(5,25 * 256);
 		// 设置行高
 		row.setHeight((short) 500);
 		// 创建单元格并赋值
@@ -60,20 +66,17 @@ public class POIWrite extends HttpServlet {
         //设置单元格的中的内容在      本单元格中的样式
         hlinkstyle.setVerticalAlignment(HSSFCellStyle.VERTICAL_CENTER);// 垂直    
         hlinkstyle.setAlignment(HSSFCellStyle.ALIGN_CENTER);// 水平    
-        //设置背景颜色
+        //设置背景颜色    设置单元格样式时必须加上这句   否则没有效果    FIll:充满      pattern:样式  
+        //设置填充样式
+        hlinkstyle.setFillPattern(HSSFCellStyle.ALIGN_CENTER);
+        //设置背景色
         hlinkstyle.setFillBackgroundColor(HSSFColor.AQUA.index);
-        
-    //    hlinkstyle.setFillPattern(HSSFCellStyle.BIG_SPOTS);
-    //    hlinkstyle.setFillForegroundColor(HSSFColor.RED.index);
-    //    hlinkstyle.setFillBackgroundColor(HSSFColor.LIGHT_BLUE.index);
-        
-        hlinkstyle.setFillForegroundColor(HSSFColor.RED.index); 
+        hlinkstyle.setFillForegroundColor(HSSFColor.RED.index);
+        hlinkstyle.setFillBackgroundColor(HSSFColor.LIGHT_BLUE.index);
         //给样式附上字体样式
         hlinkstyle.setFont(hlinkfont);  
 
-        sheet.setColumnWidth((short)10,(short)20);    
-        row.setHeight((short)50); 
-
+        //创建  超链接帮助类
         CreationHelper createHelper = wb.getCreationHelper();
         //设置链接
 		HSSFHyperlink hyperLink = (HSSFHyperlink) createHelper.createHyperlink(Hyperlink.LINK_URL);
