@@ -1,9 +1,13 @@
 package cn.baidu.com;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
@@ -12,12 +16,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
+import org.apache.poi.hssf.usermodel.HSSFClientAnchor;
 import org.apache.poi.hssf.usermodel.HSSFFont;
 import org.apache.poi.hssf.usermodel.HSSFHyperlink;
+import org.apache.poi.hssf.usermodel.HSSFPatriarch;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.ClientAnchor.AnchorType;
 import org.apache.poi.ss.usermodel.CreationHelper;
 import org.apache.poi.ss.usermodel.Hyperlink;
 import org.apache.poi.ss.usermodel.PrintSetup;
@@ -30,6 +37,7 @@ import cn.baidu.utils.FileDownloadUtils;
 public class POIWrite extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
+	
 
 	@SuppressWarnings("unused")
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -117,8 +125,30 @@ public class POIWrite extends HttpServlet {
 		cell_2.setCellValue("what's up ! ");
 		
 		
-		
-		
+		/*
+		 * 创建图片
+		 */
+		ByteArrayOutputStream byteArrayOut = new ByteArrayOutputStream();     
+		 BufferedImage bufferImg = ImageIO.read(new File("1.png"));     
+        ImageIO.write(bufferImg, "jpg", byteArrayOut);  
+        //画图的顶级管理器，一个sheet只能获取一个（一定要注意这点）  
+        HSSFPatriarch patriarch = sheet.createDrawingPatriarch();     
+        //anchor主要用于设置图片的属性  
+        HSSFClientAnchor anchor = new HSSFClientAnchor(6, 6, 255, 255,(short) 6, 6, (short) 12, 35);  
+        /*
+         * 	dx1：起始单元格的x偏移量；
+		 *	dy1：起始单元格的y偏移量；
+		 *	dx2：终止单元格的x偏移量；
+		 *	dy2：终止单元格的y偏移量；
+		 *	col1：起始单元格列序号，从0开始计算；
+		 *	row1：起始单元格行序号，从0开始计算，
+		 *	col2：终止单元格列序号，从0开始计算；
+		 *	row2：终止单元格行序号，从0开始计算，
+         */
+        AnchorType anchorType = AnchorType.MOVE_DONT_RESIZE;
+		anchor.setAnchorType(anchorType );    
+        //插入图片    
+        patriarch.createPicture(anchor, wb.addPicture(byteArrayOut.toByteArray(), HSSFWorkbook.PICTURE_TYPE_JPEG));   
 
 		/*
 		 * 导出部分
