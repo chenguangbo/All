@@ -21,6 +21,7 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CreationHelper;
 import org.apache.poi.ss.usermodel.Hyperlink;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.XSSFFont;
 
 import cn.baidu.utils.FileDownloadUtils;
@@ -86,6 +87,28 @@ public class POIWrite extends HttpServlet {
 		//给这一行附上样式
 		cell.setCellStyle(hlinkstyle); 
 		cell.setCellValue("第六行第六列");
+		//合并单元格
+		CellRangeAddress cra=new CellRangeAddress(2, 4, 4, 7); // 起始行, 终止行, 起始列, 终止列     (包左包右,从0开始)
+		 //在sheet里增加合并单元格  
+        sheet.addMergedRegion(cra);  
+        //创建一行                 第三行
+        Row row3 = sheet.createRow(3);  
+        //创建这一行的第3行的   第3列
+        Cell cell_1 = row3.createCell(3);  
+        //设置第三行第三列的数据
+        cell_1.setCellValue("When you're right , no one remembers, when you're wrong ,no one forgets .");  
+          
+        //cell 位置3-9被合并成一个单元格，不管你怎样创建第4个cell还是第5个cell…然后在写数据。都是无法写入的。  
+        //创建第三行的地10列
+        Cell cell_2 = row.createCell(10);  
+        //设置数据
+        cell_2.setCellValue("what's up ! ");  
+          
+		
+		
+		
+		
+		
 		
 		
 		
@@ -107,6 +130,7 @@ public class POIWrite extends HttpServlet {
 			resp.setHeader("content-disposition", "attachment;filename=" + filename);
 			// 5.使用workbook的write方法将文件返回
 			wb.write(os);
+			wb.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
