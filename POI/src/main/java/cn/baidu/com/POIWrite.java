@@ -104,9 +104,7 @@ public class POIWrite extends HttpServlet {
 		cell.setCellStyle(hlinkstyle);
 		cell.setCellValue("第六行第六列");
 		// 合并单元格
-		CellRangeAddress cra = new CellRangeAddress(2, 4, 4, 7); // 起始行, 终止行,
-																	// 起始列, 终止列
-																	// (包左包右,从0开始)
+		CellRangeAddress cra = new CellRangeAddress(2, 4, 4, 7); // 起始行, 终止行, 起始列, 终止列   (包左包右,从0开始)
 		// 在sheet里增加合并单元格
 		sheet.addMergedRegion(cra);
 		// 创建一行 第三行
