@@ -1,5 +1,11 @@
 package cn.baidu.com;
 
+
+/**
+ * 饿汉式
+ * @author CGB
+ *
+ */
 public class Singleton {
 
 	private Singleton() {
