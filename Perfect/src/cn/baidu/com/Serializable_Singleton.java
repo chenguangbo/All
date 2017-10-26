@@ -12,7 +12,7 @@ public class Serializable_Singleton implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	String name;
+	static String name;
 
 	private Serializable_Singleton() {
 		System.out.println("create");
@@ -22,8 +22,12 @@ public class Serializable_Singleton implements Serializable {
 	private static Serializable_Singleton instance = new Serializable_Singleton();
 
 	public static Serializable_Singleton getInstance() {
-
+		System.out.println(name);
 		return instance;
+	}
+	
+	private Object readResolve(){
+		return instance ;
 	}
 
 }
