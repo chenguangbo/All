@@ -25,7 +25,9 @@ public class Serializable_Singleton implements Serializable {
 		System.out.println(name);
 		return instance;
 	}
-	
+	//这个方法去掉    就会抛出junit.framework.AssertionFailedError:excepted:javauning......
+	//but was javatuning......
+	//这个方法会阻止创建对象直接返回反序列化出来的对象
 	private Object readResolve(){
 		return instance ;
 	}
