@@ -1,4 +1,4 @@
-package cn.baidu.com;
+package cn.baidu.decorator;
 
 public interface Car {
 	
