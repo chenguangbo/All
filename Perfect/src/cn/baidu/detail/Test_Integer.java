@@ -31,7 +31,7 @@ public class Test_Integer {
 
 		System.out.println("g" + System.identityHashCode(g));
 
-		
+		System.gc();
 		
 		System.out.println(g.toString().hashCode());
 		
