@@ -9,8 +9,9 @@ public class SelectionSort {
 
 	public static void main(String[] args) {
 		int[] arr = { 2 , 3 , 1 , 4 };
-		select(arr);
-		systemSelect(arr);
+		String[] arr2 = { "a" , "c" , "b" , "d"};
+	//	select(arr2);
+		systemSelect(arr2);
 	}
 	
 	public static void select(int[] arr){
@@ -35,9 +36,9 @@ public class SelectionSort {
 	}
 	
 	
-	public static void systemSelect(int[] arr){
-		Arrays.sort(arr);
-		System.err.println(Arrays.toString(arr));
+	public static void systemSelect(String[] arr2){
+		Arrays.sort(arr2);
+		System.err.println(Arrays.toString(arr2));
 		
 	}
 	
