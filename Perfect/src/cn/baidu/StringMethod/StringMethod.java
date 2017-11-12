@@ -1,5 +1,7 @@
 package cn.baidu.StringMethod;
 
+import java.util.Arrays;
+
 public class StringMethod {
 
 	public static void main(String[] args) {
@@ -27,6 +29,22 @@ public class StringMethod {
 		
 		boolean empty = str.isEmpty();//评判字符串是否为空""
 		System.out.println(empty);
+		
+		int length = str.length();//获取字符串的长度
+		System.out.println(length);
+		
+		String substring = str.substring(1,2);//从指定位开始   到指定位置结束截取该字符串    返回新的字符串     (索引从0开始,包左不包右)
+		System.out.println(substring);
+		
+		int indexOf = str.indexOf("d");//返回该字符产在本字符串中第一次出现的位置
+		System.out.println(indexOf);
+		
+		byte[] bytes = str.getBytes();//把字符串转换成字节数组
+		System.out.println(Arrays.toString(bytes));
+		
+		char[] charArray = str.toCharArray();//将当前字符穿转换成字符数组
+		System.out.println(Arrays.toString(charArray));
+		
 		
 		
 		
