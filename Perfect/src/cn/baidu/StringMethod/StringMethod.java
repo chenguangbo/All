@@ -45,6 +45,18 @@ public class StringMethod {
 		char[] charArray = str.toCharArray();//将当前字符穿转换成字符数组
 		System.out.println(Arrays.toString(charArray));
 		
+		String replace = str.replace("abc", "ABC");//将给定的旧字符串，用新字符串替换
+		System.out.println(replace);
+		
+		String a = "        abc      ";
+		String trim = a.trim();   //去除字符串两端的空格
+		System.out.println(trim); 
+		
+		String lowerCase = a.toLowerCase();//将整个字符串转换为小写
+		System.out.println(lowerCase);
+		
+		String upperCase = a.toUpperCase();//将整个字符串转换为大写
+		System.out.println(upperCase);
 		
 		
 		
