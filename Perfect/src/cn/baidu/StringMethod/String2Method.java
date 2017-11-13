@@ -15,6 +15,9 @@ public class String2Method {
 		
 		String replaceAll = str.replaceAll("\\+", "");
 		System.out.println(replaceAll);
+		
+		System.err.println(String.class.getName()+"@"+str.hashCode());
+		
 	}
 
 }
