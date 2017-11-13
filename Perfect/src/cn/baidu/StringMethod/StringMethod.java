@@ -58,7 +58,7 @@ public class StringMethod {
 		String upperCase = a.toUpperCase();//将整个字符串转换为大写
 		System.out.println(upperCase);
 		
-		
+	
 		
 	}
 
