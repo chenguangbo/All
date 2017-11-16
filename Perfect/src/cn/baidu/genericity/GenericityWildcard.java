@@ -27,11 +27,20 @@ public class GenericityWildcard {
 		method(list2);
 	}
 	
-	
+	//通配符的方式
 	public static void method(List<?> list) {
 		for (Object object : list) {
 			System.out.println(object);
 		}
 	}
 
+	//泛型方法的方式
+	public static <E> void method2(List<E> e){
+		for (Object object : e) {
+			System.out.println(object);
+		}
+	}
+	
+	
+	
 }
