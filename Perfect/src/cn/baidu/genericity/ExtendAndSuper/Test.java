@@ -2,7 +2,7 @@ package cn.baidu.genericity.ExtendAndSuper;
 
 import java.util.ArrayList;
 
-/*
+/**
  * 泛型限定
  * 
  * 有三个集合  存储了 动物     猫    狗 
@@ -10,6 +10,8 @@ import java.util.ArrayList;
  * 
  * 上限限定  ？ extends 父类  只能传入 父类 及子类的数据类型
  * 下限限定   ？ super 父类     只能传入父类 及其父类的数据类型
+ * 
+ * 当传入的不符合  泛型的上下限时   调用会报错
  */
 public class Test {
 
