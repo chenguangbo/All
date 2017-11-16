@@ -1,15 +1,20 @@
 package cn.baidu.genericity;
 
+
+/**
+ * 定義汎型方法
+ *    泛型方法在  方法被调用时确定了   泛型的数据类型
+ * @author CGB
+ * @param <T>
+ */
+
 public class GenericityMethod<T> {
 
-	private T t;
-	
-	public T getT() {
-		return t;
-	}
+	public <E> void method(E e, T t) {
 
-	public void setT(T t) {
-		this.t = t;
+		System.out.println(e);
+		System.out.println(t);
+
 	}
 
 }
