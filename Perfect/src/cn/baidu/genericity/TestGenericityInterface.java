@@ -6,7 +6,8 @@ public class TestGenericityInterface {
 
 		GenericityInterfaceClass<String> gi = new GenericityInterfaceClass<>();
 		gi.method("你好!");
-
+		GenericityInterfaceClass2 gic = new GenericityInterfaceClass2();
+		gic.method("我好!");
 	}
 
 }
