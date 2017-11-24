@@ -16,6 +16,7 @@ public class TestSet {
 		set.add("你好");
 		set.add("啊");
 		set.add("Siri");
+		System.out.println(set);
 		for (String string : set) {
 			System.out.println(string);
 		}
