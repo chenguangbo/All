@@ -27,8 +27,8 @@ public class TestHashSet {
 		set.add("abc");
 		set.add("bcd");
 		set.add("abc");
-		
-		
+		//set集合比較的是   hashcode()和equals()方法      
+		System.out.println(set);
 		
 		
 	}
