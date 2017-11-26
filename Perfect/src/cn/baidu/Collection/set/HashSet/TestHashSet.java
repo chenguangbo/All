@@ -30,6 +30,15 @@ public class TestHashSet {
 		//set集合比較的是   hashcode()和equals()方法      
 		System.out.println(set);
 		
+/**
+ * set集合
+ * 先判断hashCode是否相同 
+ *      			不同    直接添加到集合
+ *      			相同	
+ *      				调用equals 比较内容 
+ *      					内容相同 不添加 
+ *      					内容不同  添加 
+ */
 		
 	}
 
