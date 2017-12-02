@@ -21,7 +21,22 @@ public class TestMap {
 	public static void main(String[] args) {
 
 		Map<String,String> map = new HashMap<String,String>();
+		map.put("1", "1");
+		map.put("2", "2");
+		map.put("3", "3");
+		map.put("1", "123");
 		
+		String string = map.get("1");
+		System.out.println(string);
+		boolean key = map.containsKey("1");
+		int size = map.size();
+		String string2 = map.get("1");
+		System.out.println(size);
+		
+		
+		
+		System.out.println(key);
+		System.out.println(map);
 		
 		
 	}
