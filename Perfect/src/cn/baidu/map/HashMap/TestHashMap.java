@@ -1,6 +1,7 @@
 package cn.baidu.map.HashMap;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -35,10 +36,16 @@ public class TestHashMap {
 		Set<Entry<String,String>> set = map.entrySet();
 		for (Entry<String, String> entry : set) {
 			System.out.println(entry.getKey()+" : " + entry.getValue());
-			
 		}
 		
+		System.out.println("Map迭代器遍历------------------------------");
 		
+		Set<String> keySet2 = map.keySet();
+		Iterator<String> iterator = keySet2.iterator();
+		while(iterator.hasNext()){
+			String key = iterator.next();
+			System.out.println(key+ " : " + map.get(key) );
+		}
 		
 		
 
