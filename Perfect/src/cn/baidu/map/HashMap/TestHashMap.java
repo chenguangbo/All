@@ -2,6 +2,7 @@ package cn.baidu.map.HashMap;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 public class TestHashMap {
@@ -27,6 +28,14 @@ public class TestHashMap {
 		for (String key : keySet) {
 			String value = map.get(key);
 			System.out.println(key + " : " + value);
+		}
+		
+		System.out.println("Map的EntrySet遍历------------------------");
+		
+		Set<Entry<String,String>> set = map.entrySet();
+		for (Entry<String, String> entry : set) {
+			System.out.println(entry.getKey()+" : " + entry.getValue());
+			
 		}
 		
 		
