@@ -33,8 +33,6 @@ public class TestMap {
 		String string2 = map.get("1");
 		System.out.println(size);
 		
-		
-		
 		System.out.println(key);
 		System.out.println(map);
 		
