@@ -6,6 +6,23 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+/**
+ * HashMap           底层是hash表(数组+链表)  线程不安全的                                          无序
+ * HashTable         底层是hash表(数组+链表)  线程安全的                             效率低
+ * 
+ * LinkedHashMap     底层是hash表加链表(双向链表)   保证数据的有序
+ * TreeMap           底层是二叉树实现的
+ * 
+ * 
+ * 
+ * 
+ * @author CGB
+ *
+ */
+
+
+
+
 public class TestHashMap {
 
 	public static void main(String[] args) {
