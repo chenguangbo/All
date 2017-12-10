@@ -36,6 +36,7 @@ public class TestHashMap {
 		Set<Entry<String,String>> set = map.entrySet();
 		for (Entry<String, String> entry : set) {
 			System.out.println(entry.getKey()+" : " + entry.getValue());
+			
 		}
 		
 		System.out.println("Map迭代器遍历------------------------------");
