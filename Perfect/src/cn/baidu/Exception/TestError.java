@@ -6,9 +6,6 @@ public class TestError {
 		
 		int[] arr = new int[1024*1024*42];
 		System.out.println(arr);
-		
-		
-		
 	}
 
 }
