@@ -2,6 +2,7 @@ package cn.baidu.File.FileWrite;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Date;
 
 public class Test_FileWrite {
 
@@ -9,7 +10,7 @@ public class Test_FileWrite {
 
 		FileWriter write = new FileWriter("新年快乐.txt",true);
 		write.write("\r\n");
-		write.write("2018年1月7日20:16:24");
+		write.write(new Date(System.currentTimeMillis()).toString());
 		write.flush();
 		write.close();
 		System.out.println("写入完成");
