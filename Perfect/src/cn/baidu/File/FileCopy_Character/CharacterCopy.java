@@ -6,11 +6,15 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class CharacterCopy {
-
+	/**
+	 * 为什么在C盘创建就会报错???
+	 * @param args
+	 * @throws IOException
+	 */
 	public static void main(String[] args) throws IOException {
 
 		FileReader reader = new FileReader("新年快乐.txt");
-		File file = new File("C:\\新年快乐.txt");
+		File file = new File("D:\\新年快乐.txt");
 		if(!file.exists()){
 			file.createNewFile();
 		}
@@ -24,5 +28,6 @@ public class CharacterCopy {
 		}
 		reader.close();
 		writer.close();
+		System.out.println("文件复制完毕!");
 	}
 }
