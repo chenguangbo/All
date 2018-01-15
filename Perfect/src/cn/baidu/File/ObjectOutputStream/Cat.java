@@ -4,12 +4,20 @@ import java.io.Serializable;
 
 public class Cat implements Serializable{
 
+	
+	private static final long serialVersionUID = 1L;
 	private String name;
 	private Integer age;
 	private Integer sax;
 	public Cat() {
 		super();
 	}
+	
+	@Override
+	public String toString() {
+		return "Cat [name=" + name + ", age=" + age + ", sax=" + sax + "]";
+	}
+
 	public Cat(String name, Integer age, Integer sax) {
 		super();
 		this.name = name;
