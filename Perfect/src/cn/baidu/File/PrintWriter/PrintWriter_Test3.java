@@ -1,10 +1,8 @@
 package cn.baidu.File.PrintWriter;
 
 import java.io.BufferedWriter;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 
 public class PrintWriter_Test3 {
