@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+	<book version="one">
+		<name>葵花宝典</name>
+		<title>欲练此功 必先自宫</title>
+		<document>哈哈哈</document>
+	</book>
+
+	<book version="two">
+		<name>三年模拟五年高考</name>
+		<title>微积分与离散函数</title>
+		<document>什么几把玩意</document>
+	</book>
+
+</books>
